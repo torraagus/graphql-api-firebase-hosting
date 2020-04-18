@@ -1,0 +1,29 @@
+{
+  "name": "host-graphql-api",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "babel app --out-dir functions --ignore ./app/node_modules && cd app && cp package.json .eslintrc.js .babelrc ../functions/",
+    "deploy": "npm run build && firebase deploy",
+    "postbuild": "cd functions && npm i",
+    "prebuild": "rimraf functions"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/torraagus/graphql-api-firebase-hosting.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/torraagus/graphql-api-firebase-hosting/issues"
+  },
+  "homepage": "https://github.com/torraagus/graphql-api-firebase-hosting#readme",
+  "devDependencies": {
+    "@babel/cli": "^7.8.4",
+    "@babel/core": "^7.9.0",
+    "@babel/preset-env": "^7.9.5",
+    "rimraf": "^3.0.2"
+  }
+}
